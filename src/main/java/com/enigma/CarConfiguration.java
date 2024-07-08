@@ -12,9 +12,9 @@ import org.springframework.validation.annotation.Validated;
 
 @Configuration
 public class CarConfiguration {
-    @Bean(name = "a")
+    @Bean(name = "b")
     @Autowired
-    public Car car(GasolineEngine gasolineEngine){
+    public Car car(ElectricalEngine gasolineEngine){
         return new Car();
     }
     @Bean(name = "b")

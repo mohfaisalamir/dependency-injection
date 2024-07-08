@@ -1,3 +1,4 @@
+/*
 package com.enigma;
 
 import com.enigma.dependency_injection.bean.ElectricalEngine;
@@ -16,3 +17,4 @@ public class EngineConfiguration {
         return new ElectricalEngine();
     }
 }
+*/

@@ -9,7 +9,7 @@ public class Car {
     private String brand;
     private String model;
     @Autowired
-    @Qualifier("electricalEngine")
+    @Qualifier("gasolineEngine")
     private Engine engine;
 
     public Car(String brand, String model, Engine engine) {

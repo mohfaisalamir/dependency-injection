@@ -16,13 +16,8 @@ public class Main {
 
         }*/
         //ElectricalEngine electricalEngine = (ElectricalEngine) context.getBean("electricalEngine");
-        Car civic = (Car) context.getBean("b");// parameter harus persis dengan nama method di ApplicationConfiguration atau @bean yang diberi nama
+        Car civic = (Car) context.getBean("a");// parameter harus persis dengan nama method di ApplicationConfiguration atau @bean yang diberi nama
         civic.start();
-        Car tesla = (Car) context.getBean("b");
-        Car tesla1 = (Car) context.getBean("b");
-        Car tesla2 = (Car) context.getBean("b");
-        tesla.start();
-        System.out.println(tesla+"\n"+tesla1+"\n"+tesla2);
 
         // setelah membuat bean, lalu dibuat Container-nya
         /*ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("para-bean.xml");
