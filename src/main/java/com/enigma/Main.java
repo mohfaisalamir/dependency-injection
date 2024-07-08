@@ -3,14 +3,29 @@ package com.enigma;
 import com.enigma.dependency_injection.bean.Car;
 import com.enigma.dependency_injection.bean.ElectricalEngine;
 import com.enigma.dependency_injection.bean.Engine;
-import com.enigma.dependency_injection.bean.GasolineEngine;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 // Belajar Dependency Injection
 public class Main {
     public static void main(String[] args) {
+        ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfiguration.class);
+        /*for (String beanDefinitionName : context.getBeanDefinitionNames()) {
+            System.out.println(beanDefinitionName);
+
+        }*/
+        //ElectricalEngine electricalEngine = (ElectricalEngine) context.getBean("electricalEngine");
+        Car civic = (Car) context.getBean("b");// parameter harus persis dengan nama method di ApplicationConfiguration atau @bean yang diberi nama
+        civic.start();
+        Car tesla = (Car) context.getBean("b");
+        Car tesla1 = (Car) context.getBean("b");
+        Car tesla2 = (Car) context.getBean("b");
+        tesla.start();
+        System.out.println(tesla+"\n"+tesla1+"\n"+tesla2);
+
         // setelah membuat bean, lalu dibuat Container-nya
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("para-bean.xml");
+        /*ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("para-bean.xml");
         Engine gasolineEngine = (Engine) context.getBean("gasolineEngine");
         Engine gasolineEngine1 = (Engine) context.getBean("gasolineEngine");
         Engine gasolineEngine2 = (Engine) context.getBean("gasolineEngine");
@@ -25,8 +40,7 @@ public class Main {
             System.out.println(beanDefinitionName);
         }
         int beanDefinitionCount = context.getBeanDefinitionCount();
-        System.out.println(beanDefinitionCount);
-
+        System.out.println(beanDefinitionCount);*/
         /*Engine electricalEngine = (Engine) context.getBean("electricalEngine");
         Engine allesEngine = (Engine) context.getBean("alapAlapEngine");
         allesEngine.start();

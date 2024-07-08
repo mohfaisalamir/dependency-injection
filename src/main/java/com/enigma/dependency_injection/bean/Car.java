@@ -1,8 +1,15 @@
 package com.enigma.dependency_injection.bean;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component("a")
 public class Car {
     private String brand;
     private String model;
+    @Autowired
+    @Qualifier("electricalEngine")
     private Engine engine;
 
     public Car(String brand, String model, Engine engine) {
@@ -11,7 +18,7 @@ public class Car {
         this.engine = engine;
     }
 
-    public Car(Engine engine) {
+    public Car( Engine engine) {
         this.engine = engine;
     }
 
@@ -45,12 +52,12 @@ public class Car {
         engine.start();
     }
 
-    @Override
+    /*@Override
     public String toString() {
         return "Car{" +
                 "brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
                 ", engine=" + engine +
                 '}';
-    }
+    }*/
 }
