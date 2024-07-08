@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="gasolineEngine" class="com.enigma.dependency_injection.bean.GasolineEngine" /> <!--ini sudah menjadi bean-->
+    <bean id="electricalEngine" class="com.enigma.dependency_injection.bean.ElectricalEngine" /> <!--ini sudah menjadi bean-->
+    <bean id="alapAlapEngine" class="com.enigma.dependency_injection.bean.AlapAlapEngine" /> <!--ini sudah menjadi bean-->
+
+    <bean id="civic" class="com.enigma.dependency_injection.bean.Car" scope="prototype">
+        <!--<constructor-arg name="brand" value="honda"/>
+        <constructor-arg name="model" value="civic"/>-->
+        <constructor-arg name="engine" ref="gasolineEngine"/>
+    </bean>
+    <bean id="supra" class="com.enigma.dependency_injection.bean.Car" >
+        <constructor-arg name="brand" value="toyota"/>
+        <constructor-arg name="model" value="supra"/>
+        <constructor-arg name="engine" ref="gasolineEngine"/>
+    </bean>
+    <bean id="taurus" class="com.enigma.dependency_injection.bean.Car" >
+        <constructor-arg name="brand" value="tesla"/>
+        <constructor-arg name="model" value="taurus"/>
+        <constructor-arg name="engine" ref="electricalEngine"/>
+    </bean>
+
+
+</beans>

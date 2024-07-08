@@ -1,4 +1,4 @@
-package com.enigma.bean;
+package com.enigma.dependency_injection.bean;
 
 public class Car {
     private String brand;
@@ -8,6 +8,10 @@ public class Car {
     public Car(String brand, String model, Engine engine) {
         this.brand = brand;
         this.model = model;
+        this.engine = engine;
+    }
+
+    public Car(Engine engine) {
         this.engine = engine;
     }
 
@@ -37,7 +41,7 @@ public class Car {
     public void setEngine(Engine engine) {
         this.engine = engine;
     }
-    void start(){
+    public void start(){
         engine.start();
     }
 
