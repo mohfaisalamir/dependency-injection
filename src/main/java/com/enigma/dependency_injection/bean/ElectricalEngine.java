@@ -1,6 +1,6 @@
-package com.enigma;
+package com.enigma.bean;
 
-public class Elect implements Engine {
+public class ElectricalEngine implements Engine {
 
     @Override
     public void start() {

@@ -1,4 +1,4 @@
-package com.enigma;
+package com.enigma.bean;
 
 public class Car {
     private String brand;
